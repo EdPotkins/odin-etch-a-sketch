@@ -1,4 +1,4 @@
-* {
+div {
     border: 0;
     margin: 0;
     padding: 0;
@@ -8,18 +8,21 @@ body {
     background-color: rgb(66, 66, 66);
 }
 
+#btn-container {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     width: 640px;
     height: 640px;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-
 }
 
 .square {
-    border: 1px solid black;
     background-color: aqua;
 }
