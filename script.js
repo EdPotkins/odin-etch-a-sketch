@@ -1,6 +1,3 @@
-
-
-
 function makeGrid(size){
     const container = document.querySelector(".container");
     container.style.cssText = `
@@ -22,7 +19,9 @@ function makeGrid(size){
 function getInput(){
     deleteGrid();
     const inputSize = parseInt(window.prompt("Enter length of the square grid side:"));
-    makeGrid(inputSize);
+    if (inputSize > 100) {
+        return window.alert("Grid too big! Enter a number below 100!");
+    } else makeGrid(inputSize);
 }
 
 function deleteGrid(){
