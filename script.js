@@ -1,8 +1,8 @@
 
 
-function drawGrid(size){
-    const container = document.querySelector(".container");
 
+function makeGrid(size){
+    const container = document.querySelector(".container");
     container.style.cssText = `
     grid-template-columns: repeat(${size}, 1fr);
      grid-template-rows: repeat(${size}, 1fr)`;
@@ -12,20 +12,26 @@ function drawGrid(size){
         square.classList.add("square");
         container.appendChild(square);
     }
+
     const squares = document.querySelectorAll(".square");
     squares.forEach(square => square.addEventListener("mouseover", (e) => {
-    e.target.style.backgroundColor = "purple";
+    square.style.backgroundColor = "purple";
     }));
 }
 
 function getInput(){
+    deleteGrid();
     const inputSize = parseInt(window.prompt("Enter length of the square grid side:"));
-    drawGrid(inputSize);
+    makeGrid(inputSize);
 }
 
-function resetGrid(){
-    
+function deleteGrid(){
+    const squares = document.querySelectorAll(".square");
+    squares.forEach(square => square.remove());
 }
+
+let defaultSize = 16;
+makeGrid(defaultSize);
 
 
 
